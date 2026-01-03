@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+from { transform: scale(0.8); opacity: 0; }
+to { transform: scale(1); opacity: 1; }
+}
+
+
+footer {
+text-align: center;
+padding: 40px 20px;
+color: #9bb3bf;
+font-size: 0.85rem;
+}
+</style>
+</head>
+<body>
+
+
+<header>
+<h1>🧸 Plushie World</h1>
+<nav>
+<button onclick="showPage('home')">Home</button>
+<button onclick="showPage('collection')">Collection</button>
+</nav>
+</header>
+
+
+<section id="home" class="home active">
+<h2>Welcome to Plushie World</h2>
+<p>A cozy collection of cute, handcrafted-style plush toys</p>
+<img src="A_photograph_features_an_adorable_plush_toy_of_a_Y.png" alt="Featured Plush" />
+</section>
+
+
+<section id="collection">
+<h2 style="text-align:center; margin-bottom:30px;">Plushie Collection</h2>
+<div class="grid">
+<div class="card" onclick="openModal(this.querySelector('img').src)">
+<img src="A_photograph_features_an_adorable_plush_toy_of_a_Y.png" />
+<h3>Cozy Yeti</h3>
+</div>
+<div class="card" onclick="openModal(this.querySelector('img').src)">
+<img src="A_photograph_features_an_adorable_plush_toy_of_a_b.png" />
+<h3>Bee Plush</h3>
+</div>
+<div class="card" onclick="openModal(this.querySelector('img').src)">
+<img src="A_photograph_features_an_adorable_plush_toy_of_a_d.png" />
+<h3>Dinasoaur Plush</h3>
+</div>
+<div class="card" onclick="openModal(this.querySelector('img').src)">
+<img src="A_photograph_features_an_adorable_plushie-style_ot.png" />
+<h3>Otter Plush</h3>
+</div>
+<div class="card" onclick="openModal(this.querySelector('img').src)">
+<img src="A_photograph_features_an_adorable_plush_toy_of_an_.png" />
+<h3>Owl Plush</h3>
+</div>
+<div class="card" onclick="openModal(this.querySelector('img').src)">
+<img src="A_digital_photograph_features_an_adorable_plush_pe.png" />
+<h3>Penguin Plush</h3>
+</div>
+</div>
+</section>
+
+
+<div class="modal" id="modal" onclick="closeModal()">
+<img id="modalImg" />
+</div>
+
+
+<footer>
+© 2026 Plushie World • Cute • Cozy • Collectible
+</footer>
+
+
+<script>
+function showPage(page) {
+document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
+document.getElementById(page).classList.add('active');
+}
+
+
+function openModal(src) {
+document.getElementById('modalImg').src = src;
+document.getElementById('modal').classList.add('active');
+}
+
+
+function closeModal() {
+document.getElementById('modal').classList.remove('active');
+}
+</script>
+
+
+</body>
+</html>
